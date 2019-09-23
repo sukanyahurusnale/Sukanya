@@ -1,0 +1,234 @@
+Assignment No1 
+sub-SQL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+1) WAQTD THE EMPLOYEE WORKING IN DEPT 20
+==>
+mysql> select * from employee_info where did=20;
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId          | designation        | mobileno | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+|  2 | shweta    | shweta@gmail.com | software developer |  7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  7 | Aishwarya | aishu@gmail.com  | Analyst            | 97065488 |   22 | 1997-09-21 | 2016-01-05 |  30000 | A+ve     |   20 |
+| 11 | pravin    | pravin@gmail.com | salesman           | 97888889 |   20 | 1999-09-14 | 2013-03-09 |  20000 | b-ve     |   20 |
+| 15 | shital    | shital@gmail.com | HR                 | 90088889 |   27 | 1993-01-25 | 2010-11-09 |  55000 | o-ve     |   20 |
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+
+2)WAQTD THE EMPLOYEE EARNING  MORE THAN RS 45000
+==>mysql> select * from employee_info where salary>45000;
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId          | designation        | mobileno | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+|  8 | rohini    | rohini@gmail.com | software developer | 72180688 |   19 | 2000-07-12 | 2019-10-25 |  70000 | A-ve     |   30 |
+|  9 | sanjivani | sanju@gmail.com  | HR                 | 95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 15 | shital    | shital@gmail.com | HR                 | 90088889 |   27 | 1993-01-25 | 2010-11-09 |  55000 | o-ve     |   20 |
++----+-----------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+
+3)WAQTD THE EMPLOYEE WHOSE JOB TYPE IS SOFTWARE DEVELOPER
+==>mysql> select * from employee_info where designation='software developer';
++----+---------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name    | emailId           | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+---------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  1 | sukanya | sukanya@gmail.com | software developer |    855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  2 | shweta  | shweta@gmail.com  | software developer |   7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  8 | rohini  | rohini@gmail.com  | software developer |  72180688 |   19 | 2000-07-12 | 2019-10-25 |  70000 | A-ve     |   30 |
+| 14 | simran  | simran@gmail.com  | software developer | 987988889 |   25 | 1996-08-13 | 2013-10-19 |  45000 | A-ve     |   10 |
++----+---------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+
+4)WAQTD THE EMPLOYEE WORKING IN DEPT 10,20 & 40
+==>mysql> select * from employee_info where did in(10,20,40);
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId           | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  1 | sukanya   | sukanya@gmail.com | software developer |    855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  2 | shweta    | shweta@gmail.com  | software developer |   7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  4 | sagar     | sagar@gmail.com   | clerk              |  70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  5 | sushant   | sushant@gmail.com | salesman           |   7098654 |   20 | 1998-07-07 | 2017-05-09 |  27000 | B+ve     |   40 |
+|  6 | mansi     | mansi@gmail.com   | tester             |  97098647 |   25 | 1993-04-04 | 2018-02-09 |  30000 | B+ve     |   10 |
+|  7 | Aishwarya | aishu@gmail.com   | Analyst            |  97065488 |   22 | 1997-09-21 | 2016-01-05 |  30000 | A+ve     |   20 |
+|  9 | sanjivani | sanju@gmail.com   | HR                 |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 10 | satish    | satish@gmail.com  | clerk              |  87888889 |   30 | 1990-11-04 | 2001-05-09 |  40000 | b+ve     |   10 |
+| 11 | pravin    | pravin@gmail.com  | salesman           |  97888889 |   20 | 1999-09-14 | 2013-03-09 |  20000 | b-ve     |   20 |
+| 13 | pranita   | pranita@gmail.com | analyst            | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
+| 14 | simran    | simran@gmail.com  | software developer | 987988889 |   25 | 1996-08-13 | 2013-10-19 |  45000 | A-ve     |   10 |
+| 15 | shital    | shital@gmail.com  | HR                 |  90088889 |   27 | 1993-01-25 | 2010-11-09 |  55000 | o-ve     |   20 |
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+
+5)WAQTD THE EMPLOYEE WHOSE NAME STARTS WITH 'S'
+==>mysql> select * from employee_info where name like 's%';
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId           | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  1 | sukanya   | sukanya@gmail.com | software developer |    855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  2 | shweta    | shweta@gmail.com  | software developer |   7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  4 | sagar     | sagar@gmail.com   | clerk              |  70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  5 | sushant   | sushant@gmail.com | salesman           |   7098654 |   20 | 1998-07-07 | 2017-05-09 |  27000 | B+ve     |   40 |
+|  9 | sanjivani | sanju@gmail.com   | HR                 |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 10 | satish    | satish@gmail.com  | clerk              |  87888889 |   30 | 1990-11-04 | 2001-05-09 |  40000 | b+ve     |   10 |
+| 14 | simran    | simran@gmail.com  | software developer | 987988889 |   25 | 1996-08-13 | 2013-10-19 |  45000 | A-ve     |   10 |
+| 15 | shital    | shital@gmail.com  | HR                 |  90088889 |   27 | 1993-01-25 | 2010-11-09 |  55000 | o-ve     |   20 |
++----+-----------+-------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+
+6)WAQTD THE EMPLOYEE WHOSE FIRSTNAME IS HAVING LETTER 'R' AS SECOND CHARACTER
+==>mysql> select * from employee_info where name like '_r%';
++----+---------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+| id | name    | emailId           | designation | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+---------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+|  3 | pratik  | pratik@gmail.com  | HR          |  72180899 |   22 | 1997-08-02 | 2019-08-08 |  35000 | A+ve     |   30 |
+| 11 | pravin  | pravin@gmail.com  | salesman    |  97888889 |   20 | 1999-09-14 | 2013-03-09 |  20000 | b-ve     |   20 |
+| 13 | pranita | pranita@gmail.com | analyst     | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
++----+---------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+3 rows in set (0.00 sec)
+
+7)WAQTD THE EMPLOYEE WHOSE FIRSTNAME IS HAVING ATLEAST 2 'A' CHARACETER
+==>mysql> select * from employee_info where name like '%a%a%';
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId             | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  1 | sukanya   | sukanya@gmail.com   | software developer |    855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  4 | sagar     | sagar@gmail.com     | clerk              |  70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  7 | Aishwarya | aishu@gmail.com     | Analyst            |  97065488 |   22 | 1997-09-21 | 2016-01-05 |  30000 | A+ve     |   20 |
+|  9 | sanjivani | sanju@gmail.com     | HR                 |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 12 | omprakash | omprakash@gmail.com | tester             |  77988889 |   29 | 1991-11-19 | 2011-11-29 |  23000 | A-ve     |   30 |
+| 13 | pranita   | pranita@gmail.com   | analyst            | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+
+8)WAQTD THE EMPLOYEE WHOSE NAME IS HAVING LETTER 'E' AS THE SECOND  LAST CHARACTER
+==>mysql> select * from employee_info where name like '%e_';
+Empty set (0.00 sec)
+
+9)WAQTD THE EMPLOYEE WHO ARE HAVING EXACTLY 5 CHARACTER IN THEIR NAME
+==>mysql> select * from employee_info where name like '_____';
++----+-------+-----------------+-------------+----------+------+------------+------------+--------+----------+------+
+| id | name  | emailId         | designation | mobileno | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-------+-----------------+-------------+----------+------+------------+------------+--------+----------+------+
+|  4 | sagar | sagar@gmail.com | clerk       | 70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  6 | mansi | mansi@gmail.com | tester      | 97098647 |   25 | 1993-04-04 | 2018-02-09 |  30000 | B+ve     |   10 |
++----+-------+-----------------+-------------+----------+------+------------+------------+--------+----------+------+
+
+10)WAQTD THE EMPLOYEE WHOSE SALARY IS BETWEEN  20000 'AND' 30000
+==>mysql> select * from employee_info where salary between 20000 and 40000;
++----+-----------+---------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId             | designation        | mobileno | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+---------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+|  1 | sukanya   | sukanya@gmail.com   | software developer |   855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  2 | shweta    | shweta@gmail.com    | software developer |  7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  3 | pratik    | pratik@gmail.com    | HR                 | 72180899 |   22 | 1997-08-02 | 2019-08-08 |  35000 | A+ve     |   30 |
+|  4 | sagar     | sagar@gmail.com     | clerk              | 70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  5 | sushant   | sushant@gmail.com   | salesman           |  7098654 |   20 | 1998-07-07 | 2017-05-09 |  27000 | B+ve     |   40 |
+|  6 | mansi     | mansi@gmail.com     | tester             | 97098647 |   25 | 1993-04-04 | 2018-02-09 |  30000 | B+ve     |   10 |
+|  7 | Aishwarya | aishu@gmail.com     | Analyst            | 97065488 |   22 | 1997-09-21 | 2016-01-05 |  30000 | A+ve     |   20 |
+| 10 | satish    | satish@gmail.com    | clerk              | 87888889 |   30 | 1990-11-04 | 2001-05-09 |  40000 | b+ve     |   10 |
+| 11 | pravin    | pravin@gmail.com    | salesman           | 97888889 |   20 | 1999-09-14 | 2013-03-09 |  20000 | b-ve     |   20 |
+| 12 | omprakash | omprakash@gmail.com | tester             | 77988889 |   29 | 1991-11-19 | 2011-11-29 |  23000 | A-ve     |   30 |
++----+-----------+---------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+10 rows in set (0.00 sec)
+
+11)WAQTD  ALL THE DETAILS OF SOFTWARE DEVELOPER IN DEPT ID 20
+==>mysql> select * from employee_info where designation='software developer' and did=20;
++----+--------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+| id | name   | emailId          | designation        | mobileno | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+--------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+|  2 | shweta | shweta@gmail.com | software developer |  7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
++----+--------+------------------+--------------------+----------+------+------------+------------+--------+----------+------+
+
+12)WAQTD  THE LIST FOR ALL THE SOFTWARE DEVELOPER IN DEPT NO 40 AND HAVING SALARY GREATEER THAN 30000
+==>mysql> select * from employee_info where designation='software developer' and did=40 and salary>30000;
+Empty set (0.00 sec)
+
+13)WAQTD THE LIST OF ALL THE EMPLOYEES EXCEPT THOSE WHO ARE WORKING IN DEPT 10 & 20
+==>mysql> select * from employee_info where Did not in(10,20);
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId             | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  3 | pratik    | pratik@gmail.com    | HR                 |  72180899 |   22 | 1997-08-02 | 2019-08-08 |  35000 | A+ve     |   30 |
+|  4 | sagar     | sagar@gmail.com     | clerk              |  70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+|  5 | sushant   | sushant@gmail.com   | salesman           |   7098654 |   20 | 1998-07-07 | 2017-05-09 |  27000 | B+ve     |   40 |
+|  8 | rohini    | rohini@gmail.com    | software developer |  72180688 |   19 | 2000-07-12 | 2019-10-25 |  70000 | A-ve     |   30 |
+|  9 | sanjivani | sanju@gmail.com     | HR                 |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 12 | omprakash | omprakash@gmail.com | tester             |  77988889 |   29 | 1991-11-19 | 2011-11-29 |  23000 | A-ve     |   30 |
+| 13 | pranita   | pranita@gmail.com   | analyst            | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+7 rows in set (0.02 sec)
+
+14)WAQTD LIST THE EMPLOYEE WHO ARE NOT WORKING AS SOFTWARE DEVELOPER AND CLERK IN DEPT 10 & 20 WITH THE SALARY IN THE RANGE 20000 TO 30000
+==>
+mysql> select * from employee_info where designation not in('software developer','clerk') and did not in(10,20) and salary not between 20000 and 30000;
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId           | designation | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+|  3 | pratik    | pratik@gmail.com  | HR          |  72180899 |   22 | 1997-08-02 | 2019-08-08 |  35000 | A+ve     |   30 |
+|  9 | sanjivani | sanju@gmail.com   | HR          |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 13 | pranita   | pranita@gmail.com | analyst     | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+
+15)WAQTD LIST THE EMPLOYEE WHOSE SALARY IS NOT IN RANGE OF 20000 TO 30000 IN DEPT 10,20,30 EXCEPT ALL SALESMAN
+==>mysql> select * from employee_info where designation not in('salesman') and did not in(10,20,30) and salary not between 20000 and 30000;
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId           | designation | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+|  9 | sanjivani | sanju@gmail.com   | HR          |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+| 13 | pranita   | pranita@gmail.com | analyst     | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
++----+-----------+-------------------+-------------+-----------+------+------------+------------+--------+----------+------+
+2 rows in set (0.00 sec)
+
+
+16)WAQTD ARRANGE ALL THE EMPLOYEES BY THEIR SALARY IN DESCENDING ORDER
+==>mysql> select * from employee_info order by salary desc ;
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+| id | name      | emailId             | designation        | mobileno  | age  | dob        | DOJ        | salary | bloodgrp | Did  |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+|  9 | sanjivani | sanju@gmail.com     | HR                 |  95613617 |   25 | 1994-06-06 | 2015-07-18 |  90000 | O+ve     |   40 |
+|  8 | rohini    | rohini@gmail.com    | software developer |  72180688 |   19 | 2000-07-12 | 2019-10-25 |  70000 | A-ve     |   30 |
+| 15 | shital    | shital@gmail.com    | HR                 |  90088889 |   27 | 1993-01-25 | 2010-11-09 |  55000 | o-ve     |   20 |
+| 14 | simran    | simran@gmail.com    | software developer | 987988889 |   25 | 1996-08-13 | 2013-10-19 |  45000 | A-ve     |   10 |
+| 13 | pranita   | pranita@gmail.com   | analyst            | 977988889 |   24 | 1996-10-11 | 2010-10-19 |  44000 | o-ve     |   40 |
+| 10 | satish    | satish@gmail.com    | clerk              |  87888889 |   30 | 1990-11-04 | 2001-05-09 |  40000 | b+ve     |   10 |
+|  3 | pratik    | pratik@gmail.com    | HR                 |  72180899 |   22 | 1997-08-02 | 2019-08-08 |  35000 | A+ve     |   30 |
+|  1 | sukanya   | sukanya@gmail.com   | software developer |    855482 |   21 | 1997-04-18 | 2019-07-25 |  30000 | o+ve     |   10 |
+|  2 | shweta    | shweta@gmail.com    | software developer |   7218099 |   21 | 1997-08-14 | 2019-07-25 |  30000 | o+ve     |   20 |
+|  6 | mansi     | mansi@gmail.com     | tester             |  97098647 |   25 | 1993-04-04 | 2018-02-09 |  30000 | B+ve     |   10 |
+|  7 | Aishwarya | aishu@gmail.com     | Analyst            |  97065488 |   22 | 1997-09-21 | 2016-01-05 |  30000 | A+ve     |   20 |
+|  5 | sushant   | sushant@gmail.com   | salesman           |   7098654 |   20 | 1998-07-07 | 2017-05-09 |  27000 | B+ve     |   40 |
+|  4 | sagar     | sagar@gmail.com     | clerk              |  70876499 |   26 | 1994-08-02 | 2015-06-08 |  24000 | B-ve     |   40 |
+| 12 | omprakash | omprakash@gmail.com | tester             |  77988889 |   29 | 1991-11-19 | 2011-11-29 |  23000 | A-ve     |   30 |
+| 11 | pravin    | pravin@gmail.com    | salesman           |  97888889 |   20 | 1999-09-14 | 2013-03-09 |  20000 | b-ve     |   20 |
+| 16 | abc       | NULL                | NULL               |      NULL |   44 | NULL       | NULL       |   NULL | NULL     | NULL |
++----+-----------+---------------------+--------------------+-----------+------+------------+------------+--------+----------+------+
+
+
+17)WAQTD MAXIMUN,MINIMUM,TOTAL SALARY OF EMPLOYEE
+==>mysql> select min(salary) as minimumsal,max(salary) maximumsal,sum(salary) totalsal from employee_info;
++------------+------------+----------+
+| minimumsal | maximumsal | totalsal |
++------------+------------+----------+
+|      20000 |      90000 |   593000 |
++------------+------------+----------+
+
+
+18)WAQTD LIST OF THE NO OF SOFTWARE DEVELOPER IN DEPT 30 
+==>mysql> select count(designation) from employee_info where designation='software developer' and did=30;
++--------------------+
+| count(designation) |
++--------------------+
+|                  1 |
++--------------------+
+1 row in set (0.00 sec)
+
+19)WAQTD LIST OF THE HIGHEST AND LOWEST SALARY EARNED BY SALES MAN
+==>mysql> select min(salary) as lowestsal, max(salary) as highestsal from employee_info;
++-----------+------------+
+| lowestsal | highestsal |
++-----------+------------+
+|     20000 |      90000 |
++-----------+------------+
+1 row in set (0.03 sec)
+
+20)WAQTD TOTAL SALARY OF ALL DEPT
+==>mysql> select sum(salary) as totalsalary from employee_info;
++-------------+
+| totalsalary |
++-------------+
+|      593000 |
++-------------+
+1 row in set (0.00 sec)
